@@ -1,35 +1,36 @@
 package study;
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import stringcalculator.*;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTest {
-    StringCalculator stringCalculator;
     Calculator calculator;
 
-    @BeforeAll
+    @BeforeEach
     public void setUp() {
-        stringCalculator = new StringCalculator();
         calculator = new Calculator();
     }
 
-
     @Test
-    public void split() {
-        String actual = "1 + 2 * 3";
-        assertThat(calculator.StringToArray(actual))
-                .contains("1")
-                .contains("+")
-                .contains("2")
-                .contains("*")
-                .contains("3");
+    public void testAdd() {
+        assertEquals(4, calculator.calculate(2, '+', 2));
     }
 
     @Test
-    public void makeResultTest() {
-        int actual = calculator.makeResult("1 + 2 * 3");
-        assertThat(actual).isEqualTo(9);
+    public void testSubtract() {
+        assertEquals(3, calculator.calculate(5, '-', 2));
+    }
+
+    @Test
+    public void testMultiply() {
+        assertEquals(10, calculator.calculate(5, '*', 2));
+    }
+
+    @Test
+    public void testDivide() {
+        assertEquals(2, calculator.calculate(10, '/', 5));
     }
 }

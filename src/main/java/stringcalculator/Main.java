@@ -1,16 +1,15 @@
-package study;
+package stringcalculator;
 
 import java.util.Scanner;
 
 
-public class StringCalculator {
+public class Main {
 
     public static void main(String[] args) {
-        Calculator calculator = new Calculator();
-
+        Result result = new Result();
         Scanner scanner = new Scanner(System.in);
         String value = scanner.nextLine();
-        calculator.makeResult(value);
+        result.makeResult(value);
     }
 
 }
