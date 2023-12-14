@@ -2,7 +2,7 @@ package stringcalculator;
 
 public class Expression {
 
-    private static String[] expression;
+    private String[] expression;
 
     public Expression(String expression) {
         this.expression = expression.split("");
@@ -12,3 +12,4 @@ public class Expression {
         return expression;
     }
 }
+

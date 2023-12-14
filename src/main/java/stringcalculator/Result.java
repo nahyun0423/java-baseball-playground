@@ -1,9 +1,11 @@
 package stringcalculator;
 
 public class Result {
+    Input input = new Input();
+    Operator oper = new Operator();
 
-    public static int calculateResult() {
-        String value = Input.inputData(Input.scan);
+    public int calculateResult() {
+        String value = input.inputData(input.scan);
         Expression expression = new Expression(value);
         String[] splitedValue = expression.getExpression();
 
@@ -16,7 +18,7 @@ public class Result {
             } else {
                 int number = Integer.parseInt(splitedValue[i]);
 
-                result = Operator.operate(result, operator, number);
+                result = oper.operate(result, operator, number);
             }
         }
         return result;

@@ -1,9 +1,9 @@
 package stringcalculator;
 
 public class Operator {
-    static Calculator cal = new Calculator();
+    Calculator cal = new Calculator();
 
-    public static int operate(int firstNum, String operator, int secondNum) {
+    public int operate(int firstNum, String operator, int secondNum) {
 
         if (operator.equals("+")) {
             return cal.add(firstNum, secondNum);
