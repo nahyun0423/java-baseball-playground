@@ -17,7 +17,7 @@ public class Operator {
         if (operator.equals("/")) {
             return cal.div(firstNum, secondNum);
         }
-        return 0;
+        throw new IllegalArgumentException("잘못된 기호 입력");
     }
 
     static boolean isOperator(String str) {

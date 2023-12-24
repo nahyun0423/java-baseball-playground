@@ -1,8 +1,9 @@
 package stringcalculator;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class CalculatorTest {
 
@@ -28,8 +29,12 @@ public class CalculatorTest {
         assertEquals(5, calculator.div(15, 3));
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     public void divZeroArithmeticException() {
-        calculator.div(10, 0);
+        try {
+            calculator.div(10, 0);
+        } catch (ArithmeticException e) {
+            Assertions.assertEquals("0으로 나눌 수 없다", e.getMessage());
+        }
     }
 }
